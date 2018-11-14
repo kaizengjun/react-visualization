@@ -4,7 +4,8 @@ class Bubble extends Component {
   render () {
     return (
       <div>
-        Bubble
+        <p>Bubble</p>
+        <p>{this.props.arr}</p>
       </div>
     )
   }

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Hello from './component/Hello'
 import Bubble from './component/Bubble'
 
 class App extends Component {
   render() {
+    const sortArr = [20, 3, 9, 44, 12]
     return (
       <div className="App">
-        <Hello/>
-        <Bubble/>
+        <Bubble arr={sortArr.join(',')}/>
       </div>
     );
   }
