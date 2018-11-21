@@ -7,7 +7,7 @@ class App extends Component {
     const sortArr = [20, 3, 9, 44, 12]
     return (
       <div className="App">
-        <Bubble arr={sortArr.join(',')}/>
+        <Bubble arr={sortArr}/>
       </div>
     );
   }
