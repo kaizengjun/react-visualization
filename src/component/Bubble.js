@@ -3,11 +3,37 @@ import React, { Component } from 'react'
 class Bubble extends Component {
   constructor (props) {
     super(props)
-    this.state = { data: props.arr}
+    this.state = {
+      data: props.arr,
+      sortStateArr: []
+    }
   }
 
-  handleClick () {
-    console.log('Click')
+  startSort () {
+    const arr = this.state.data
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          const temp = arr[j]
+          arr[j] = arr[j + 1]
+          arr[j + 1] = temp
+        }
+        this.state.sortStateArr.push([...arr])
+      }
+    }
+    let count = 0
+    while (count < this.state.sortStateArr.length) {
+      this.handleDelay(count)
+      count++
+    }
+  }
+
+  handleDelay (count) {
+    setTimeout(() => {
+      this.setState({
+        data: this.state.sortStateArr[count]
+      })
+    }, 1000 * count)
   }
 
   render () {
@@ -21,7 +47,7 @@ class Bubble extends Component {
             </div>
           )}
         </div>
-        <button onClick={this.handleClick}>Start</button>
+        <button onClick={this.startSort.bind(this)}>Start</button>
       </div>
     )
   }

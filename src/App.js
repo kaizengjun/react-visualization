@@ -4,7 +4,7 @@ import Bubble from './component/Bubble'
 
 class App extends Component {
   render() {
-    const sortArr = [20, 3, 9, 44, 12]
+    const sortArr = [20, 3, 9, 44, 12, 8, 1, 23, 4]
     return (
       <div className="App">
         <Bubble arr={sortArr}/>
