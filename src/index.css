@@ -25,11 +25,14 @@ code {
   display: inline-block;
   margin-right: 20px;
   width: 30px;
-  background-color: cadetblue;
 }
 
 .value {
   display: inline-block;
   position: relative;
   top: -20px;
+}
+
+button {
+  margin-right: 20px;
 }
